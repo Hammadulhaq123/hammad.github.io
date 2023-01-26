@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="description"
+        content="Sharing my Skillset in a unique way that's what I wanted todo by developing this!">
+    <link rel="shortcut icon" href="./images/favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1" />
+    <title>My Skillset | A Unique way!</title>
+    <!-- Link Swiper's CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+
+    <!-- Demo styles -->
+    <link rel="stylesheet" href="./css/skills.css">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+
+<body>
+    <div>
+        <h1 class="ml11" style="margin-bottom: 20px;">
+            <span class="text-wrapper" style="display: flex; flex-direction: column;">
+                <span class="line line1"></span>
+                <span class="letters">My SKills.</span>
+                <span class="letters">Shuffle Me!</span>
+
+            </span>
+        </h1>
+    </div>
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="./images/html.png" alt="">
+                <div class="des">
+                    <h5>HTML.</h5>
+                    <p>Without it making the structure of a web page was not possible. That's why I learned HTML.
+                    </p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./images/csslogo.jpeg" alt="">
+                <div class="des">
+                    <h5>CSS</h5>
+                    <p>To create user-friendly interfaces, animations and more importantly to style the web I learned
+                        CSS.
+                    </p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./images/javascriptlogo.png" alt="">
+                <div class="des">
+                    <h5>JavaScript</h5>
+                    <p>A great design that can not interact is piece of crap. I wanted to give worth to my skills an
+                        that's why I learned Javascript
+                    </p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./images/phplogo.jpeg" alt="">
+                <div class="des">
+                    <h5>php.</h5>
+                    <p>I know much about php, but I am still learning it to be a Full stack developer.
+                    </p>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="./images/pythonlogo.jpeg" alt="">
+                <div class="des">
+                    <h5>Python.</h5>
+                    <p>Python was a fun language that's why I learned it never implemented but learned it just for fun.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+    <!-- Initialize Swiper -->
+    <script>
+        var swiper = new Swiper(".mySwiper", {
+            effect: "cards",
+            grabCursor: true,
+        });
+    </script>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+    <script>
+        // Wrap every letter in a span
+        var textWrapper = document.querySelector('.ml11 .letters');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/([^\x00-\x80]|\w)/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({ loop: true })
+            .add({
+                targets: '.ml11 .line',
+                scaleY: [0, 1],
+                opacity: [0.5, 1],
+                easing: "easeOutExpo",
+                duration: 700
+            })
+            .add({
+                targets: '.ml11 .line',
+                translateX: [0, document.querySelector('.ml11 .letters').getBoundingClientRect().width + 10],
+                easing: "easeOutExpo",
+                duration: 700,
+                delay: 100
+            }).add({
+                targets: '.ml11 .letter',
+                opacity: [0, 1],
+                easing: "easeOutExpo",
+                duration: 600,
+                offset: '-=775',
+                delay: (el, i) => 34 * (i + 1)
+            }).add({
+                targets: '.ml11',
+                opacity: 0,
+                duration: 1000,
+                easing: "easeOutExpo",
+                delay: 1000
+            });
+    </script>
+</body>
+
+</html>
